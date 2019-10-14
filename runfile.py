@@ -17,7 +17,7 @@ from data_generator import cifar10_gen
 datapath = './datasets/new_cifar10/'
 
 num_classes = 10
-epochs = 100
+epochs = 50
 
 batch_size = 128
 learning_rate = 0.01
@@ -51,10 +51,11 @@ mask = np.argmax(y_pred, axis=1)
 pred = np.zeros(y_pred.shape)
 for i in range(y_pred.shape[0]):
     pred[i][mask[i]] = 1
+    
+print(classification_report(y_test, pred))
 
 # with open('./datasets/cifar10/test_batch', 'rb') as testfile:
 #     data = pickle.load(testfile, encoding='latin1')
 #     labels = data['labels']
 #     labels = to_categorical(labels, num_classes=num_classes)
 #     print(classification_report(labels, pred))
-print(classification_report(y_test, pred))
