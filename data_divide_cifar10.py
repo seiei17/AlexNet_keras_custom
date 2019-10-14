@@ -45,8 +45,8 @@ data = load_file(read_path)
 images = data['data']
 labels = data['labels']
 for i in range(20):
-    write_data = dict(zip(['images', 'labels'], [images[j * 500: (j + 1)* 500][:],
-                                                 labels[j * 500: (j + 1)* 500][:]]))
+    write_data = dict(zip(['images', 'labels'], [images[i * 500: (i + 1)* 500][:],
+                                                 labels[i * 500: (i + 1)* 500][:]]))
     write_path = os.path.join(file_write_prefix, 'test_batch_{}'.format(k))
     k += 1
     write_file(write_path, write_data)
