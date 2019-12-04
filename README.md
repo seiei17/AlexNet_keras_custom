@@ -4,7 +4,10 @@ A practice after reading paper, using cifar10 datasets.
 论文名 《ImageNet Classification with Deep Convolutional Neural Networks》
 
 ## 网络结构
+![alexnet](./depository/alexnet.PNG)
+
 AlexNet一共7层，不包括输入和输出。
+
 * input, 输入为224x224.
 * C1, 96个卷积核，11x11x3，stride=4.
 两块GPU分别为55x55x48.
@@ -31,7 +34,9 @@ AlexNet一共7层，不包括输入和输出。
 之前的网络大多使用的tanh、sigmoid函数作为激活函数，而alexnet采取了relu单元，即$f(x)=max(0,x)$，这有利于减缓深层网络梯度消失的问题，能适当缓解过拟合，加快训练速度。
 
 2. 局部响应归一化 (Local Response Normalization, LRN)
-LRN是一种防止数据过拟合而提出的方法，通常在ReLU层之后进行操作。
+  LRN是一种防止数据过拟合而提出的方法，通常在ReLU层之后进行操作。
+
+  ![ALEX2](./depository/ALEX2.png)
 
 现在使用LRN的地方不多，因为操作耗时多且性能提升不大。
 
